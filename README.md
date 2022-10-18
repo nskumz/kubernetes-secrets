@@ -26,3 +26,25 @@ echo -n 'user' > ./username.key
 echo -n '54f41d12e8fa' > ./password.txt
 ```
 
+2.now use kubectl to create the secrets
+```shell
+kubectl create secret generic fb-credentials
+--from-file=username.key\
+--from-file=password.txt
+```
+
+3. To provide keys for values stored in the secret, use the following syntax:
+
+```shell
+kubectl create secret generic [secret-name] \
+--from-file=[key1]=[file1] \
+--from-file=[key2]=[file2]
+```
+4. Check that the secret has been successfully created by typing:
+
+```shell
+kubectl get secrets
+```
+
+
+
