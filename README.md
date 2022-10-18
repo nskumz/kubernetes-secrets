@@ -7,7 +7,7 @@ KUBERNETES SECRET TYPES
 Kubernetes features two categories of secrets
 
 1. The system’s service accounts automatically create built-in secrets and associate them with containers together with API credentials.
-2.You can also create customized secrets for credentials you need to make available to pods.
+2. You can also create customized secrets for credentials you need to make available to pods.
 
 
 Create Kubernetes Secrets
