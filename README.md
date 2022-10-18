@@ -19,7 +19,8 @@ To create a Kubernetes secret, apply one of the following methods:
 
 ---> Use a generator, such as Kustomize to generate the secret.
 
-1. To start creating a secret with kubectl, first create the files to store the sensitive information:
+A)
+1.To start creating a secret with kubectl, first create the files to store the sensitive information:
 
 ```shell
 echo -n 'user' > ./username.key
@@ -46,5 +47,27 @@ kubectl create secret generic [secret-name] \
 kubectl get secrets
 ```
 
+B)
+1.Create Secrets in a Configuration File
 
+```shell
+echo -n 'user' | base64
+echo -n '54f41d12e8fa' | base64
+```
+2. Now create a yaml file using a text editor. The file should look like this:
+```shell
+apiVersion: v1
+kind: Secret
+metadata:  
+  name: newsecret
+type: Opaque
+data:
+  username: dXNlcg==
+  password: NTRmNDFkMTJlOGZh
+```
+3.3. Save the file and use the kubectl apply command to create the secret:
+
+```shell
+kubectl apply -f [file-name]
+```
 
