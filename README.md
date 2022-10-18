@@ -9,3 +9,10 @@ Kubernetes features two categories of secrets
 1. The system’s service accounts automatically create built-in secrets and associate them with containers together with API credentials.
 2.You can also create customized secrets for credentials you need to make available to pods.
 
+
+Create Kubernetes Secrets
+To create a Kubernetes secret, apply one of the following methods:
+
+---> Use kubectl for a command-line based approach.
+---> Create a configuration file for the secret.
+---> Use a generator, such as Kustomize to generate the secret.
